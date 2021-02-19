@@ -1,10 +1,10 @@
-kind: ResourceQuota
 apiVersion: v1
+kind: ResourceQuota
 metadata:
   name: backend-quota
 spec:
   hard:
-    pods: "3"
-    cpu: "1"
-    memory: 1Gi
-
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
