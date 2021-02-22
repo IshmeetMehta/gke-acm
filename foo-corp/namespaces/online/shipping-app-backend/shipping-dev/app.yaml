@@ -17,8 +17,11 @@ spec:
         app: "sample-app"
     spec:
       containers:
-      - name: "hello-lab-v2-1"
-        image: "gcr.io/ishmeetm/hello-lab-v2:latest"
+      - name: "helloworld"
+        image: "dockercloud/hello-world"
+        ports:
+        - containerPort: 80
+
 ---
 apiVersion: "autoscaling/v2beta1"
 kind: "HorizontalPodAutoscaler"
