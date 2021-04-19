@@ -1,9 +1,10 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sPSPReadOnlyRootFilesystem
+kind: K8sPSPPrivilegedContainer
 metadata:
-  name: psp-readonlyrootfilesystem
+  name: psp-privileged-container
 spec:
   match:
     kinds:
       - apiGroups: [""]
-        kinds: ["Pod", "Deployment"]
+        kinds: ["Pod"]
+    excludedNamespaces: ["kube-system"]
